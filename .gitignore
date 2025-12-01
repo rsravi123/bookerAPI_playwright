@@ -30,3 +30,9 @@ hs_err_pid*
 
 # Ignore build output
 dist/
+
+# Node modules
+node_modules/
+
+# Test reports
+reports/
