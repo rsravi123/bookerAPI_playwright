@@ -20,7 +20,6 @@
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^9.5.1",
-    "multiple-cucumber-html-reporter": "^1.22.0",
     "@types/chai": "^4.3.10",
     "@types/node": "^20.10.5",
     "@types/xlsx": "^0.0.36",
