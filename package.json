@@ -1,0 +1,36 @@
+{
+  "name": "api-cucumber-typescript",
+  "version": "1.0.0",
+  "description": "API Testing Framework using Cucumber BDD and TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "cucumber-js --require \"dist/stepdefinitions/**/*.js\" \"src/test/resources/features\"",
+    "test:tags": "cucumber-js --require \"dist/stepdefinitions/**/*.js\" \"src/test/resources/features\" --tags",
+    "test:debug": "node --inspect-brk node_modules/.bin/cucumber-js",
+    "report": "node scripts/generateReport.js"
+  },
+  "keywords": [
+    "cucumber",
+    "bdd",
+    "api-testing",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.5.1",
+    "@cucumber/junit-formatter": "^9.0.0",
+    "@types/chai": "^4.3.10",
+    "@types/node": "^20.10.5",
+    "@types/xlsx": "^0.0.36",
+    "chai": "^4.3.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "winston": "^3.11.0",
+    "xlsx": "^0.18.5"
+  }
+}
