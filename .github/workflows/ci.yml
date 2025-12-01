@@ -31,11 +31,10 @@ jobs:
       - name: Build (generate `dist`)
         run: npm run build
 
-      - name: Run Cucumber tests and produce JSON + JUnit reports
+      - name: Run Cucumber tests and produce JSON report
         run: |
           npx cucumber-js --require "dist/stepdefinitions/**/*.js" "src/test/resources/features" \
-            --format json:reports/cucumber.json \
-            --format @cucumber/junit-formatter:reports/cucumber.xml
+            --format json:reports/cucumber.json
 
       - name: Upload `dist` artifact
         if: success()
@@ -51,12 +50,7 @@ jobs:
           name: cucumber-report
           path: reports/cucumber.json
 
-      - name: Upload Cucumber JUnit XML report
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cucumber-junit
-          path: reports/cucumber.xml
+      # JUnit formatter removed due to unavailable package; keep JSON/HTML reports
 
       - name: Generate HTML report from JSON
         if: success()
