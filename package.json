@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "cucumber-js --require \"dist/stepdefinitions/**/*.js\" \"src/test/resources/features\"",
-    "test:tags": "cucumber-js --require \"dist/stepdefinitions/**/*.js\" \"src/test/resources/features\" --tags",
+    "test": "cucumber-js --require \"dist/stepdefinitions/**/*.js\" \"src/test/resources/features\" --format json:reports/cucumber.json",
+    "test:tags": "cucumber-js --require \"dist/stepdefinitions/**/*.js\" \"src/test/resources/features\" --tags --format json:reports/cucumber.json",
     "test:debug": "node --inspect-brk node_modules/.bin/cucumber-js",
     "report": "node scripts/generateReport.js"
   },
